@@ -1,0 +1,352 @@
+﻿import ImageWithFallback from './components/ImageWithFallback';
+
+export default function Home() {
+  const menuItems = [
+      { name: "Dimsum Mentai", price: "25.000", image: "🥟", desc: "Udang segar premium dengan saus mentai creamy yang meleleh di lidah" },
+      { name: "Dimsum Reguler", price: "19.000", image: "🥢", desc: "Daging ayam pilihan dengan bumbu rahasia warisan keluarga" },
+      { name: "Gyoza", price: "15.000", image: "🥟", desc: "Kulit renyah sempurna, isian daging juicy yang menggugah selera" },
+      { name: "Fresh Drink", price: "-", image: "🥤", desc: "Minuman segar pilihan untuk melengkapi pengalaman kuliner Anda" },
+    ];
+
+  return (
+    <main className="min-h-screen bg-red-700 relative overflow-hidden">
+      {/* JSON-LD Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "Dimsum Mustika",
+            "description": "Dimsum premium dengan harga terjangkau mulai 15K",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Blok C 17 no 22",
+              "addressLocality": "Mustika",
+              "addressCountry": "ID"
+            },
+            "telephone": "085212508683",
+            "servesCuisine": "Chinese, Dimsum",
+            "priceRange": "Rp 15.000 - Rp 25.000",
+            "menu": {
+              "@type": "Menu",
+              "hasMenuSection": [
+                {
+                  "@type": "MenuSection",
+                  "name": "Dimsum",
+                  "hasMenuItem": [
+                    {
+                      "@type": "MenuItem",
+                      "name": "Dimsum Mentai",
+                      "offers": {
+                        "@type": "Offer",
+                        "price": "25000",
+                        "priceCurrency": "IDR"
+                      }
+                    },
+                    {
+                      "@type": "MenuItem",
+                      "name": "Gyoza",
+                      "offers": {
+                        "@type": "Offer",
+                        "price": "15000",
+                        "priceCurrency": "IDR"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          })
+        }}
+      />
+      {/* Chinese Pattern Background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-64 h-64 border-8 border-white" style={{
+          clipPath: "polygon(0 0, 100% 0, 100% 20%, 80% 20%, 80% 40%, 60% 40%, 60% 60%, 40% 60%, 40% 80%, 20% 80%, 20% 100%, 0 100%)"
+        }}></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 border-8 border-white" style={{
+          clipPath: "polygon(0 0, 100% 0, 100% 20%, 80% 20%, 80% 40%, 60% 40%, 60% 60%, 40% 60%, 40% 80%, 20% 80%, 20% 100%, 0 100%)"
+        }}></div>
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-10 left-10 w-20 h-32 border-4 border-white rounded-full opacity-30"></div>
+      <div className="absolute top-20 left-32 w-16 h-28 border-4 border-orange-400 rounded-full opacity-40"></div>
+      <div className="absolute top-32 right-20 w-20 h-32 border-4 border-white rounded-full opacity-30"></div>
+      <div className="absolute bottom-20 right-40 w-16 h-28 border-4 border-orange-400 rounded-full opacity-40"></div>
+
+      {/* Wavy Lines */}
+      <svg className="absolute top-1/4 left-0 w-full opacity-20" height="100" viewBox="0 0 1200 100">
+        <path d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" stroke="orange" strokeWidth="8" fill="none"/>
+        <path d="M0,70 Q150,40 300,70 T600,70 T900,70 T1200,70" stroke="orange" strokeWidth="6" fill="none"/>
+      </svg>
+
+      <div className="relative z-10">
+        {/* Hero Section with Phone Mockup */}
+        <section className="container mx-auto px-6 py-12">
+          {/* Hero Headline */}
+          <div className="text-center mb-12 max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight" style={{ textShadow: "3px 3px 6px rgba(0,0,0,0.4)" }}>
+              Cita Rasa Bintang Lima,<br />
+              <span className="text-orange-300">Harga Bersahabat</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-orange-100 font-semibold mb-8 leading-relaxed">
+              Setiap gigitan dimsum kami adalah perpaduan sempurna antara tradisi kuliner China dan bahan premium pilihan. 
+              Nikmati kelezatan autentik yang tak terlupakan.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Phone Mockup */}
+            <div className="relative">
+              <div className="bg-black rounded-[3rem] p-4 shadow-2xl transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                <div className="bg-white rounded-[2.5rem] overflow-hidden">
+                  <div className="bg-red-600 p-8 text-center relative">
+                    {/* Decorative corners */}
+                    <div className="absolute top-4 left-4 w-12 h-12 border-t-4 border-l-4 border-orange-400"></div>
+                    <div className="absolute top-4 right-4 w-12 h-12 border-t-4 border-r-4 border-orange-400"></div>
+                    <div className="absolute bottom-4 left-4 w-12 h-12 border-b-4 border-l-4 border-orange-400"></div>
+                    <div className="absolute bottom-4 right-4 w-12 h-12 border-b-4 border-r-4 border-orange-400"></div>
+                    
+                    <div className="text-6xl mb-4">🥟</div>
+                    <h2 className="text-4xl font-black text-white mb-2">Dimsum Mustika</h2>
+                    <p className="text-orange-300 text-sm font-bold">KUALITAS PREMIUM, HARGA TERJANGKAU</p>
+                    
+                    <div className="mt-6 space-y-2">
+                      <a href="tel:085212508683" className="bg-white text-red-600 px-6 py-2 rounded-full text-sm font-bold inline-block hover:bg-orange-100 transition">Pesan Sekarang</a>
+                      <p className="text-white text-xs">Pengalaman Kuliner Bintang Lima</p>
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 bg-gray-50">
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-white p-2 rounded-lg shadow">
+                        <div className="text-2xl">🥟</div>
+                        <p className="text-xs font-bold">Gyoza</p>
+                      </div>
+                      <div className="bg-white p-2 rounded-lg shadow">
+                        <div className="text-2xl">🥢</div>
+                        <p className="text-xs font-bold">Siomay</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Menu Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              {menuItems.map((item, index) => (
+                <article key={index} className="bg-gradient-to-br from-red-800 to-red-900 rounded-2xl p-6 text-white shadow-xl border-4 border-orange-400 relative overflow-hidden hover:scale-105 transition-transform">
+                  {/* Decorative corner */}
+                  <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-white opacity-50"></div>
+                  <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-white opacity-50"></div>
+                  
+                  {/* Image */}
+                  <div className="w-full h-32 mb-3 rounded-xl overflow-hidden bg-white/10">
+                    <ImageWithFallback
+                      src={
+                        index === 0 ? "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=300&fit=crop" :
+                        index === 1 ? "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop" :
+                        index === 2 ? "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&h=300&fit=crop" :
+                        "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop"
+                      }
+                      alt={item.name}
+                      fallbackEmoji={item.image}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <h3 className="font-black text-lg mb-2 uppercase" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
+                    {item.name}
+                  </h3>
+                  <p className="text-orange-200 text-xs mb-3">{item.desc}</p>
+                  <div className="bg-orange-400 text-red-900 font-black px-3 py-1 rounded-full inline-block text-sm">
+                    Rp {item.price}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* USP Section - 3 Keunggulan Utama */}
+        <section className="container mx-auto px-6 py-16" aria-labelledby="usp-heading">
+          <div className="text-center mb-12">
+            <h2 id="usp-heading" className="text-4xl md:text-5xl font-black text-white mb-4" style={{ textShadow: "3px 3px 6px rgba(0,0,0,0.4)" }}>
+              Mengapa Dimsum Mustika?
+            </h2>
+            <p className="text-orange-200 text-lg font-semibold">Tiga Pilar Keunggulan yang Membedakan Kami</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* USP 1 - Udang Segar */}
+            <article className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-400 hover:scale-105 transition-transform">
+              <div className="mb-4 w-full h-48 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center overflow-hidden">
+                <ImageWithFallback 
+                  src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=600&fit=crop" 
+                  alt="Udang Segar Premium Dimsum Mustika" 
+                  fallbackEmoji="🦐" 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+              <h3 className="text-2xl font-black text-red-700 mb-4 text-center">Udang Segar Pilihan</h3>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Kami hanya menggunakan udang segar berkualitas premium yang dipilih langsung setiap pagi. 
+                Tekstur kenyal dan rasa manis alami udang terjaga sempurna dalam setiap dimsum kami.
+              </p>
+              <div className="mt-6 text-center">
+                <span className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold">
+                  100% Fresh Daily
+                </span>
+              </div>
+            </article>
+
+            {/* USP 2 - Daging Ayam Pilihan */}
+            <article className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-400 hover:scale-105 transition-transform">
+              <div className="mb-4 w-full h-48 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center overflow-hidden">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=800&h=600&fit=crop"
+                  alt="Daging Ayam Premium Dimsum Mustika"
+                  fallbackEmoji="ðŸ—"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-black text-red-700 mb-4 text-center">Daging Ayam Premium</h3>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Daging ayam pilihan tanpa lemak berlebih, diproses dengan standar kebersihan tertinggi. 
+                Setiap potongan dipilih dengan teliti untuk menghasilkan tekstur lembut dan cita rasa yang kaya.
+              </p>
+              <div className="mt-6 text-center">
+                <span className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold">
+                  Premium Quality
+                </span>
+              </div>
+            </article>
+
+            {/* USP 3 - Resep Warisan */}
+            <article className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-400 hover:scale-105 transition-transform">
+              <div className="mb-4 w-full h-48 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center overflow-hidden">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=800&h=600&fit=crop"
+                  alt="Resep Warisan Turun-Temurun Dimsum Mustika"
+                  fallbackEmoji="ðŸ“œ"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-black text-red-700 mb-4 text-center">Resep Warisan Turun-Temurun</h3>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Resep autentik yang diwariskan dari generasi ke generasi, dipadukan dengan teknik modern. 
+                Setiap dimsum dibuat dengan penuh kehati-hatian mengikuti tradisi kuliner China yang sesungguhnya.
+              </p>
+              <div className="mt-6 text-center">
+                <span className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold">
+                  Authentic Recipe
+                </span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Party Package Section */}
+        <section className="container mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-2 gap-8">
+            <article className="bg-red-800 rounded-3xl p-8 text-white border-4 border-orange-400 relative overflow-hidden">
+              {/* Background Image */}
+              <div className="absolute inset-0 opacity-20">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop"
+                  alt="Party Dimsum"
+                  fallbackEmoji="🎉"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="text-3xl font-black mb-4">Paket Spesial untuk Acara Istimewa</h3>
+                <p className="text-orange-300 mb-4 text-lg">
+                  Hadirkan kelezatan dimsum premium untuk ulang tahun, arisan, gathering kantor, atau perayaan keluarga Anda. 
+                  Kami siap melayani dengan standar kualitas terbaik dan harga yang bersahabat.
+                </p>
+                <div className="flex gap-4 mb-4" aria-hidden="true">
+                  <div className="text-4xl">🥟</div>
+                  <div className="text-4xl">🥤</div>
+                  <div className="text-4xl">🎊</div>
+                </div>
+                <a href="tel:085212508683" className="bg-orange-400 text-red-900 px-6 py-2 rounded-full font-bold hover:bg-orange-300 transition inline-block">
+                  Konsultasi Paket Party
+                </a>
+              </div>
+            </article>
+
+            <article className="bg-gradient-to-br from-orange-400 to-orange-500 rounded-3xl p-8 text-red-900 border-4 border-white relative overflow-hidden">`n              {/* Background Image */}`n              <div className="absolute inset-0 opacity-20">`n                <ImageWithFallback`n                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop"`n                  alt="Restaurant Location"`n                  fallbackEmoji="📍"`n                  className="w-full h-full object-cover"`n                />`n              </div>`n              `n              <div className="relative z-10">
+              <h3 className="text-3xl font-black mb-4">Lokasi Kami</h3>
+              <address className="not-italic">
+                <p className="font-bold mb-2">ðŸ“ Dimsum Mustika</p>
+                <p className="text-sm mb-2">Blok C 17 no 22</p>
+                <p className="font-bold mb-4">ðŸ“ž <a href="tel:085212508683" className="hover:underline">085212508683</a></p>
+              </address>
+              <p className="text-sm mb-4 font-semibold">Buka Setiap Hari | Delivery & Takeaway Available</p>
+              <a href="tel:085212508683" className="bg-red-700 text-white px-6 py-2 rounded-full font-bold hover:bg-red-800 transition inline-block">
+                Hubungi Kami
+              </a>`n              </div></article>
+          </div>
+        </section>
+
+        {/* Lunch Time Promo */}
+        <section className="container mx-auto px-6 py-12">
+          <div className="bg-white rounded-3xl p-12 text-center border-8 border-orange-400 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-red-600 rounded-full -mr-16 -mt-16 opacity-20"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-orange-400 rounded-full -ml-16 -mb-16 opacity-20"></div>
+            
+            <h2 className="text-5xl font-black text-red-700 mb-4 relative z-10">Istirahat Makan Siang yang Berkesan</h2>
+            <p className="text-gray-700 text-xl mb-6 relative z-10 font-semibold leading-relaxed">
+              Manjakan diri Anda dengan dimsum hangat yang dibuat fresh setiap hari. 
+              Pengalaman kuliner premium yang sempurna untuk menemani hari Anda. Siap disajikan dalam 15 menit!
+            </p>
+            <div className="flex justify-center gap-6 text-6xl relative z-10 mb-6" aria-hidden="true">
+              <span>🥟</span>
+              <span>🥢</span>
+              <span>🥤</span>
+            </div>
+            <a href="tel:085212508683" className="bg-red-700 text-white px-8 py-3 rounded-full font-bold hover:bg-red-800 transition inline-block text-lg relative z-10">
+              Pesan Sekarang
+            </a>
+          </div>
+        </section>
+
+        {/* Special Price Banner */}
+        <section className="container mx-auto px-6 py-12">
+          <div className="bg-gradient-to-r from-red-700 via-red-600 to-red-700 rounded-3xl p-8 text-center border-8 border-orange-400 shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10" aria-hidden="true">
+              <div className="text-9xl">ðŸŒ¸ ðŸŒ¸ ðŸŒ¸</div>
+            </div>
+            <p className="text-orange-300 text-xl font-bold relative z-10 mb-2">SIGNATURE DIMSUM MENTAI</p>
+            <h2 className="text-6xl font-black text-white mb-2 relative z-10" style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.5)" }}>
+              Rp 25<span className="text-orange-400">.000</span>
+            </h2>
+            <p className="text-white text-lg relative z-10 mb-4 leading-relaxed">
+              Udang segar premium dengan saus mentai creamy khas kami.<br />
+              Kualitas bintang lima, harga yang terjangkau untuk semua.
+            </p>
+            <a href="tel:085212508683" className="bg-orange-400 text-red-900 px-8 py-3 rounded-full font-black hover:bg-orange-300 transition inline-block relative z-10">
+              Pesan Menu Signature
+            </a>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="container mx-auto px-6 py-8 text-center text-white">
+          <h3 className="text-orange-300 font-bold text-2xl mb-2">Dimsum Mustika</h3>
+          <p className="text-sm opacity-75 mb-3 italic">Warisan Cita Rasa, Kualitas Premium untuk Semua</p>
+          <p className="mb-2">ðŸ“ž <a href="tel:085212508683" className="hover:text-orange-300 transition">085212508683</a></p>
+          <p className="text-sm mb-4">ðŸ“ Blok C 17 no 22, Mustika</p>
+          <p className="text-xs mt-4 opacity-50">&copy; 2024 Dimsum Mustika. Semua Hak Dilindungi.</p>
+        </footer>
+      </div>
+    </main>
+  );
+}
+
+
