@@ -11,7 +11,7 @@ export default function Home() {
   const menuItems = [
     { 
       name: "Dimsum Mentai", 
-      price: "25.000", 
+      price: "16.000", 
       image: "🥟", 
       desc: "Udang segar premium dengan saus mentai creamy yang meleleh di lidah",
       detailDesc: "Dimsum Mentai kami dibuat dengan udang segar pilihan yang dipadukan dengan saus mentai creamy khas Jepang. Setiap gigitan memberikan sensasi lumer di mulut dengan rasa gurih yang sempurna. Cocok untuk Anda yang menyukai perpaduan seafood premium dengan saus yang kaya rasa.",
@@ -19,27 +19,19 @@ export default function Home() {
     },
     { 
       name: "Dimsum Reguler", 
-      price: "19.000", 
+      price: "16.000", 
       image: "🥢", 
       desc: "Daging ayam pilihan dengan bumbu rahasia warisan keluarga",
       detailDesc: "Dimsum klasik dengan isian daging ayam pilihan yang dibumbui dengan resep warisan turun-temurun. Tekstur daging yang lembut dan juicy berpadu dengan kulit dimsum yang kenyal. Menu favorit keluarga yang tidak pernah mengecewakan.",
       ingredients: ["Daging ayam premium", "Bumbu warisan keluarga", "Kulit dimsum tradisional", "Sayuran segar"]
     },
     { 
-      name: "Gyoza", 
+      name: "Dimsum Chili Oil", 
       price: "15.000", 
-      image: "🥟", 
-      desc: "Kulit renyah sempurna, isian daging juicy yang menggugah selera",
-      detailDesc: "Gyoza dengan kulit yang dipanggang hingga renyah di bagian bawah dan lembut di bagian atas. Isian daging yang juicy dengan campuran sayuran segar memberikan tekstur dan rasa yang sempurna. Disajikan dengan saus gyoza spesial yang menambah kelezatan.",
-      ingredients: ["Daging babi/ayam pilihan", "Sayuran segar", "Kulit gyoza renyah", "Saus gyoza spesial"]
-    },
-    { 
-      name: "Fresh Drink", 
-      price: "-", 
-      image: "🥤", 
-      desc: "Minuman segar pilihan untuk melengkapi pengalaman kuliner Anda",
-      detailDesc: "Berbagai pilihan minuman segar untuk menemani santapan dimsum Anda. Mulai dari teh tradisional, jus buah segar, hingga minuman modern yang menyegarkan. Sempurnakan pengalaman kuliner Anda dengan minuman pilihan kami.",
-      ingredients: ["Teh premium", "Buah segar", "Es batu", "Sirup pilihan"]
+      image: "🌶️", 
+      desc: "Dimsum lembut dengan siraman chili oil pedas gurih yang menggugah selera",
+      detailDesc: "Dimsum Chili Oil kami adalah perpaduan sempurna antara dimsum kukus yang lembut dengan saus chili oil khas yang kaya rasa. Minyak cabai yang aromatik dengan sentuhan bawang putih dan rempah pilihan menciptakan cita rasa pedas gurih yang adiktif. Cocok untuk pecinta makanan pedas yang ingin sensasi berbeda.",
+      ingredients: ["Dimsum ayam/udang pilihan", "Chili oil homemade", "Bawang putih goreng", "Wijen sangrai", "Daun bawang segar"]
     },
   ];
 
@@ -75,12 +67,20 @@ export default function Home() {
             <div className="relative">
               <div className="bg-black rounded-[3rem] p-4 shadow-2xl">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden">
-                  <div className="bg-red-600 p-8 text-center relative">
-                    <div className="text-6xl mb-4">🥟</div>
-                    <h2 className="text-4xl font-black text-white mb-2">Dimsum Mustika</h2>
-                    <p className="text-orange-300 text-sm font-bold">KUALITAS PREMIUM, HARGA TERJANGKAU</p>
-                    <div className="mt-6">
-                      <a href="tel:085212508683" className="bg-white text-red-600 px-6 py-2 rounded-full text-sm font-bold inline-block">Pesan Sekarang</a>
+                  <div className="relative">
+                    <ImageWithFallback
+                      src="/images/WhatsApp Image 2026-04-04 at 15.09.21.jpeg"
+                      alt="Dimsum Mustika"
+                      fallbackEmoji="🥟"
+                      className="w-full h-72 object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+                      <h2 className="text-3xl font-black text-white mb-1">Dimsum Mustika</h2>
+                      <p className="text-orange-300 text-xs font-bold mb-3">KUALITAS PREMIUM, HARGA TERJANGKAU</p>
+                      <div className="flex gap-2 justify-center">
+                        <a href="https://wa.me/6285212508683" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-4 py-2 rounded-full text-xs font-bold inline-block">💬 WhatsApp</a>
+                        <a href="tel:085212508683" className="bg-white text-red-600 px-4 py-2 rounded-full text-xs font-bold inline-block">📞 Telepon</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -98,9 +98,9 @@ export default function Home() {
                   <div className="w-full h-32 mb-3 rounded-xl overflow-hidden bg-white/10">
                     <ImageWithFallback
                       src={
-                        index === 0 ? "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=300&fit=crop" :
-                        index === 1 ? "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop" :
-                        index === 2 ? "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&h=300&fit=crop" :
+                        index === 0 ? "/images/download (13).jpg" :
+                        index === 1 ? "/images/Premium Photo _ Siomay or su mai or steamed dumpling dimsum.jpg" :
+                        index === 2 ? "/images/Dimsum Chili Oil.jpg" :
                         "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop"
                       }
                       alt={item.name}
@@ -257,9 +257,9 @@ export default function Home() {
             <div className="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 overflow-hidden">
               <ImageWithFallback
                 src={
-                  selectedProduct === 0 ? "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&h=600&fit=crop" :
-                  selectedProduct === 1 ? "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=800&h=600&fit=crop" :
-                  selectedProduct === 2 ? "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&h=600&fit=crop" :
+                  selectedProduct === 0 ? "/images/download (13).jpg" :
+                  selectedProduct === 1 ? "/images/Premium Photo _ Siomay or su mai or steamed dumpling dimsum.jpg" :
+                  selectedProduct === 2 ? "/images/Dimsum Chili Oil.jpg" :
                   "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=600&fit=crop"
                 }
                 alt={menuItems[selectedProduct].name}
@@ -298,10 +298,18 @@ export default function Home() {
 
               <div className="flex gap-4">
                 <a 
+                  href="https://wa.me/6285212508683"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-green-600 text-white text-center py-3 rounded-full font-bold hover:bg-green-700 transition-colors"
+                >
+                  💬 WhatsApp
+                </a>
+                <a 
                   href="tel:085212508683" 
                   className="flex-1 bg-red-600 text-white text-center py-3 rounded-full font-bold hover:bg-red-700 transition-colors"
                 >
-                  📞 Pesan Sekarang
+                  📞 Telepon
                 </a>
                 <button
                   onClick={() => setSelectedProduct(null)}
@@ -334,7 +342,7 @@ export default function Home() {
 
             <div className="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 overflow-hidden">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=600&fit=crop"
+                src="/images/dimsum mentai @dimsum_yn.jpg"
                 alt="Party Package"
                 fallbackEmoji="🎉"
                 className="w-full h-full object-cover"
