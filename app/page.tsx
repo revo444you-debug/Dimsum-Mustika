@@ -36,7 +36,9 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-red-700 relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden" style={{backgroundColor: "#b91c1c"}}>
+      {/* Foto sebagai pola texture subtle */}
+      <div className="absolute inset-0 z-0 opacity-10" style={{backgroundImage: "url('/images/2da44ca0470eb971df947ecd9592be42.jpg')", backgroundSize: "300px", backgroundRepeat: "repeat"}}></div>
       {/* Chinese Pattern Background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 right-0 w-64 h-64 border-8 border-white"></div>
@@ -69,7 +71,7 @@ export default function Home() {
                 <div className="bg-white rounded-[2.5rem] overflow-hidden">
                   <div className="relative">
                     <ImageWithFallback
-                      src="/images/WhatsApp Image 2026-04-04 at 15.09.21.jpeg"
+                      src="/images/8a471d14400b275177b6ac4dca24f676.jpg"
                       alt="Dimsum Mustika"
                       fallbackEmoji="🥟"
                       className="w-full h-72 object-cover"
@@ -93,23 +95,31 @@ export default function Home() {
                 <article 
                   key={index} 
                   onClick={() => setSelectedProduct(index)}
-                  className="bg-gradient-to-br from-red-800 to-red-900 rounded-2xl p-6 text-white shadow-xl border-4 border-orange-400 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+                  className="bg-amber-100 rounded-2xl p-6 text-red-900 shadow-xl border-4 border-orange-400 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
                 >
+                  {index === 0 && (
+                    <div className="absolute top-0 left-0 w-20 h-20 z-10">
+                      <img 
+                        src="/images/Best_Sellers_Clipart_Vector__Best_Seller_Red_Label__Guarantee__Shop__Background_PNG_Image_For_Free_Download-removebg-preview.png" 
+                        alt="Best Seller" 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
                   <div className="w-full h-32 mb-3 rounded-xl overflow-hidden bg-white/10">
                     <ImageWithFallback
                       src={
                         index === 0 ? "/images/download (13).jpg" :
                         index === 1 ? "/images/Premium Photo _ Siomay or su mai or steamed dumpling dimsum.jpg" :
-                        index === 2 ? "/images/Dimsum Chili Oil.jpg" :
-                        "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop"
+                        "/images/49e0078b6df2ce0844e7f68001cacebc.jpg"
                       }
                       alt={item.name}
                       fallbackEmoji={item.image}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="font-black text-lg mb-2 uppercase">{item.name}</h3>
-                  <p className="text-orange-200 text-xs mb-3">{item.desc}</p>
+                  <h3 className="font-black text-lg mb-2 uppercase text-red-800">{item.name}</h3>
+                  <p className="text-red-700 text-xs mb-3">{item.desc}</p>
                   <div className="bg-orange-400 text-red-900 font-black px-3 py-1 rounded-full inline-block text-sm">
                     Rp {item.price}
                   </div>
@@ -118,20 +128,118 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+
+              {/* Card Jam Operasional */}
+              <article className="bg-amber-100 rounded-2xl p-6 text-red-900 shadow-xl border-4 border-orange-400 flex flex-col justify-between">
+                <div>
+                  <div className="text-4xl mb-3">🕐</div>
+                  <h3 className="font-black text-lg mb-4 uppercase text-red-800">Jam Operasional</h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between items-center border-b border-red-300 pb-2">
+                      <span className="text-red-700">Senin - Jumat</span>
+                      <span className="font-bold text-red-900">07.00 - 21.00</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-red-300 pb-2">
+                      <span className="text-red-700">Sabtu - Minggu</span>
+                      <span className="font-bold text-red-900">07.00 - 22.00</span>
+                    </div>
+                    <div className="flex justify-between items-center pt-1">
+                      <span className="text-red-700">Delivery</span>
+                      <span className="font-bold text-green-700">✓ Tersedia</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://wa.me/6285212508683" target="_blank" rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="mt-4 bg-orange-400 text-red-900 font-black px-3 py-2 rounded-full text-sm text-center block hover:bg-orange-300 transition-colors">
+                  💬 Order via WA
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* Daftar Harga Section */}
+        <section className="container mx-auto px-6 py-8">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-black text-white mb-2">🥟 Daftar Harga</h2>
+              <p className="text-orange-200">Pilih sesuai selera dan kebutuhan Anda</p>
+            </div>
+            <div className="space-y-4">
+              <div className="bg-red-700 border-4 border-orange-400 rounded-2xl p-6 text-white shadow-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🧡</span>
+                  <h3 className="text-2xl font-black uppercase">Dimsum Mentai</h3>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
+                    <span className="text-orange-200">3 pcs</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 15.000</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
+                    <span className="text-orange-200">6 pcs</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 32.000</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-red-700 border-4 border-orange-400 rounded-2xl p-6 text-white shadow-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🥢</span>
+                  <h3 className="text-2xl font-black uppercase">Dimsum Reguler</h3>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
+                    <span className="text-orange-200">3 pcs</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 10.000</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
+                    <span className="text-orange-200">5 pcs</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 16.000</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-red-700 border-4 border-orange-400 rounded-2xl p-6 text-white shadow-xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🌶️</span>
+                  <h3 className="text-2xl font-black uppercase">Dimsum Chili Oil</h3>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
+                    <span className="text-orange-200">3 pcs</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 12.000</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
+                    <span className="text-orange-200">5 pcs</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 20.000</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* USP Section */}
         <section className="container mx-auto px-6 py-16">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 relative">
+            {/* Ornamen subtle */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-0 left-8 w-16 h-16 border-4 border-red-500 rounded-full opacity-40"></div>
+              <div className="absolute top-4 left-20 w-8 h-8 border-2 border-red-500 rounded-full opacity-30"></div>
+              <div className="absolute bottom-0 right-8 w-16 h-16 border-4 border-red-500 rounded-full opacity-40"></div>
+              <div className="absolute bottom-4 right-20 w-8 h-8 border-2 border-red-500 rounded-full opacity-30"></div>
+              <div className="absolute top-1/2 left-0 w-24 h-1 bg-red-500 opacity-20 rounded-full"></div>
+              <div className="absolute top-1/2 right-0 w-24 h-1 bg-red-500 opacity-20 rounded-full"></div>
+              <div className="absolute top-2 left-1/4 text-red-500 opacity-20 text-4xl">✦</div>
+              <div className="absolute top-2 right-1/4 text-red-500 opacity-20 text-4xl">✦</div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Mengapa Dimsum Mustika?</h2>
             <p className="text-orange-200 text-lg font-semibold">Tiga Pilar Keunggulan yang Membedakan Kami</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <article className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-400">
-              <div className="mb-4 w-full h-48 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <article className="bg-amber-100 rounded-3xl p-8 shadow-2xl border-4 border-orange-400">
+              <div className="mb-4 w-full h-48 bg-orange-50 rounded-2xl flex items-center justify-center overflow-hidden">
                 <ImageWithFallback 
                   src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=600&fit=crop" 
                   alt="Udang Segar Premium" 
@@ -140,13 +248,13 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-2xl font-black text-red-700 mb-4 text-center">Udang Segar Pilihan</h3>
-              <p className="text-gray-700 leading-relaxed text-center">
+              <p className="text-red-800 leading-relaxed text-center">
                 Kami hanya menggunakan udang segar berkualitas premium yang dipilih langsung setiap pagi.
               </p>
             </article>
 
-            <article className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-400">
-              <div className="mb-4 w-full h-48 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center overflow-hidden">
+            <article className="bg-amber-100 rounded-3xl p-8 shadow-2xl border-4 border-orange-400">
+              <div className="mb-4 w-full h-48 bg-orange-50 rounded-2xl flex items-center justify-center overflow-hidden">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=800&h=600&fit=crop"
                   alt="Daging Ayam Premium"
@@ -155,23 +263,8 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-2xl font-black text-red-700 mb-4 text-center">Daging Ayam Premium</h3>
-              <p className="text-gray-700 leading-relaxed text-center">
+              <p className="text-red-800 leading-relaxed text-center">
                 Daging ayam pilihan tanpa lemak berlebih, diproses dengan standar kebersihan tertinggi.
-              </p>
-            </article>
-
-            <article className="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-400">
-              <div className="mb-4 w-full h-48 bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=800&h=600&fit=crop"
-                  alt="Resep Warisan"
-                  fallbackEmoji="📜"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-black text-red-700 mb-4 text-center">Resep Warisan Turun-Temurun</h3>
-              <p className="text-gray-700 leading-relaxed text-center">
-                Resep autentik yang diwariskan dari generasi ke generasi, dipadukan dengan teknik modern.
               </p>
             </article>
           </div>
@@ -259,7 +352,7 @@ export default function Home() {
                 src={
                   selectedProduct === 0 ? "/images/download (13).jpg" :
                   selectedProduct === 1 ? "/images/Premium Photo _ Siomay or su mai or steamed dumpling dimsum.jpg" :
-                  selectedProduct === 2 ? "/images/Dimsum Chili Oil.jpg" :
+                  selectedProduct === 2 ? "/images/49e0078b6df2ce0844e7f68001cacebc.jpg" :
                   "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=600&fit=crop"
                 }
                 alt={menuItems[selectedProduct].name}
