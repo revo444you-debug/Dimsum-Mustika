@@ -18,7 +18,7 @@ export default function Home() {
       ingredients: ["Udang segar premium", "Saus mentai creamy", "Kulit dimsum halus", "Bumbu rahasia"]
     },
     { 
-      name: "Dimsum Reguler", 
+      name: "Dimsum Original", 
       price: "16.000", 
       image: "🥢", 
       desc: "Daging ayam pilihan dengan bumbu rahasia warisan keluarga",
@@ -67,14 +67,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Phone Mockup */}
             <div className="relative">
-              <div className="bg-black rounded-[3rem] p-4 shadow-2xl">
+              <div className="bg-orange-400 rounded-[3rem] p-4 shadow-2xl">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden">
                   <div className="relative">
                     <ImageWithFallback
-                      src="/images/8a471d14400b275177b6ac4dca24f676.jpg"
+                      src="/images/874a5bbc-1c49-424d-8c54-38521274937d.jpg"
                       alt="Dimsum Mustika"
                       fallbackEmoji="🥟"
-                      className="w-full h-72 object-cover"
+                      className="w-full h-72 object-cover object-center"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
                       <h2 className="text-3xl font-black text-white mb-1">Dimsum Mustika</h2>
@@ -109,8 +109,8 @@ export default function Home() {
                   <div className="w-full h-32 mb-3 rounded-xl overflow-hidden bg-white/10">
                     <ImageWithFallback
                       src={
-                        index === 0 ? "/images/download (13).jpg" :
-                        index === 1 ? "/images/Premium Photo _ Siomay or su mai or steamed dumpling dimsum.jpg" :
+                        index === 0 ? "/images/e1bb6e69-ae3e-4650-96d8-54483531b7de.jpg" :
+                        index === 1 ? "/images/84d0d2bd-2941-4833-8bfc-369cc51602a6.jpg" :
                         "/images/49e0078b6df2ce0844e7f68001cacebc.jpg"
                       }
                       alt={item.name}
@@ -175,7 +175,7 @@ export default function Home() {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
                     <span className="text-orange-200">3 pcs</span>
-                    <span className="font-black text-orange-300 text-lg">Rp 15.000</span>
+                    <span className="font-black text-orange-300 text-lg">Rp 16.000</span>
                   </div>
                   <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
                     <span className="text-orange-200">6 pcs</span>
@@ -186,7 +186,7 @@ export default function Home() {
               <div className="bg-red-700 border-4 border-orange-400 rounded-2xl p-6 text-white shadow-xl">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">🥢</span>
-                  <h3 className="text-2xl font-black uppercase">Dimsum Reguler</h3>
+                  <h3 className="text-2xl font-black uppercase">Dimsum Original</h3>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between items-center bg-red-600/50 rounded-xl px-4 py-3">
@@ -234,7 +234,6 @@ export default function Home() {
               <div className="absolute top-2 right-1/4 text-red-500 opacity-20 text-4xl">✦</div>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Mengapa Dimsum Mustika?</h2>
-            <p className="text-orange-200 text-lg font-semibold">Tiga Pilar Keunggulan yang Membedakan Kami</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -256,7 +255,7 @@ export default function Home() {
             <article className="bg-amber-100 rounded-3xl p-8 shadow-2xl border-4 border-orange-400">
               <div className="mb-4 w-full h-48 bg-orange-50 rounded-2xl flex items-center justify-center overflow-hidden">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=800&h=600&fit=crop"
+                  src="/images/49d1e6ba405baccfdf33280efe387b16.jpg"
                   alt="Daging Ayam Premium"
                   fallbackEmoji="🍗"
                   className="w-full h-full object-cover"
@@ -301,14 +300,14 @@ export default function Home() {
 
             <article 
               onClick={() => setShowLocationModal(true)}
-              className="bg-gradient-to-br from-orange-400 to-orange-500 rounded-3xl p-8 text-red-900 border-4 border-white cursor-pointer hover:scale-105 transition-transform duration-300 relative"
+              className="bg-red-700 rounded-3xl p-8 text-white border-4 border-orange-400 cursor-pointer hover:scale-105 transition-transform duration-300 relative"
             >
               <h3 className="text-3xl font-black mb-4">Lokasi Kami</h3>
               <p className="font-bold mb-2">📍 Dimsum Mustika</p>
               <p className="text-sm mb-2">Blok C 17 no 22</p>
               <p className="font-bold mb-4">📞 <a href="tel:085212508683" onClick={(e) => e.stopPropagation()}>085212508683</a></p>
               <p className="text-sm mb-4 font-semibold">Buka Setiap Hari | Delivery & Takeaway Available</p>
-              <div className="bg-red-700 text-white px-6 py-2 rounded-full font-bold inline-block">
+              <div className="bg-orange-400 text-red-900 px-6 py-2 rounded-full font-bold inline-block">
                 Hubungi Kami
               </div>
               <div className="absolute top-2 right-2 bg-white/20 rounded-full p-2 text-xs">
@@ -350,8 +349,8 @@ export default function Home() {
             <div className="w-full h-64 bg-gradient-to-br from-red-100 to-orange-100 overflow-hidden">
               <ImageWithFallback
                 src={
-                  selectedProduct === 0 ? "/images/download (13).jpg" :
-                  selectedProduct === 1 ? "/images/Premium Photo _ Siomay or su mai or steamed dumpling dimsum.jpg" :
+                  selectedProduct === 0 ? "/images/e1bb6e69-ae3e-4650-96d8-54483531b7de.jpg" :
+                  selectedProduct === 1 ? "/images/84d0d2bd-2941-4833-8bfc-369cc51602a6.jpg" :
                   selectedProduct === 2 ? "/images/49e0078b6df2ce0844e7f68001cacebc.jpg" :
                   "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=600&fit=crop"
                 }
